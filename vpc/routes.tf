@@ -11,3 +11,10 @@ resource "aws_route_table" "route" {
     Name = "example"
   }
 }
+#resource "aws_route" "route-from-default-vpc" {
+#  count                     = length(data.aws_route_tables.default-vpc-route.ids)
+#  route_table_id            = element(data.aws_route_tables.default-vpc-route.ids,count.index)
+#  destination_cidr_block    = "10.0.1.0/22"
+#  vpc_peering_connection_id = "pcx-45ff3dc1"
+#  depends_on                = [aws_route_table.testing]
+#}
